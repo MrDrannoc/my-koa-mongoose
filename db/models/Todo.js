@@ -1,9 +1,11 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 var todoSchema = new mongoose.Schema({
-    name: String
+  title: String,
+  complete: Boolean,
+  userId: String
 });
 
-let Todo = mongoose.model('Todo', todoSchema)
+let Todo = mongoose.model('Todo', todoSchema);
 
-module.exports = Todo
+module.exports = Todo;

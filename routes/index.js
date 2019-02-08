@@ -11,11 +11,12 @@ const {
 
 const isAuthenticated = require('../auth/isAuthenticated');
 
-router.get('/todo', isAuthenticated, TodoController.findAll)
-router.post('/todo', isAuthenticated, TodoController.create)
-router.get('/todo/:id', isAuthenticated, TodoController.findOne)
-router.put('/todo/:id', isAuthenticated, TodoController.update)
-router.delete('/todo/:id', isAuthenticated, TodoController.delete)
+router.get('/todolist', isAuthenticated, TodoController.findAll)
+router.post('/todolist', isAuthenticated, TodoController.create)
+router.get('/todolistbyuser/:userId', isAuthenticated, TodoController.findAllByUser);
+router.get('/todolist/:id', isAuthenticated, TodoController.findOne)
+router.put('/todolist/:id', isAuthenticated, TodoController.update)
+router.delete('/todolist/:id', isAuthenticated, TodoController.delete)
 
 router.post('/signup', UserController.signup)
 router.post('/login', UserController.login)
